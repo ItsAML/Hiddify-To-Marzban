@@ -24,21 +24,21 @@ def gb_to_bytes(gigabytes):
     return int(bytes)
 
 def validate_username(username):
+    
+    # Limit the username length between 3 to 32 characters
+    username = username[:32] if len(username) > 32 else username
+    if len(username) < 3:
+        # Append 'v2' to satisfy the minimum length
+        username = username + 'v2'
+
     # Convert non-ASCII characters to ASCII
     username = unicodedata.normalize('NFKD', username).encode('ascii', 'ignore').decode()
 
     # Remove any non-alphanumeric characters except underscores
     username = re.sub(r'[^a-zA-Z0-9_]', '', username)
 
-    # Limit the username length between 3 to 32 characters
-    username = username[:32] if len(username) > 32 else username
-    
-    # Repeat characters if the length is less than 3
-    if len(username) < 3:
-        repeat_times = (3 // len(username)) + 1
-        username = (username * repeat_times)[:3]
-
     return username
+
 
 
 # Detecting Persian/Arabic Words
