@@ -1,6 +1,6 @@
 # Hiddify To Marzban Migrate Script
 
- | Simply Transfer Your Users From X-Ui to Marzban
+ | Simply Transfer Your Users From Hiddify to Marzban
 
 ## Table of Contents
 - [About](#about)
@@ -28,7 +28,7 @@ M_HTTPS = False  # Set to True to use HTTPS, False to use HTTP
 
 ## About
 
-This script is designed to simplify the transfer of user data from X-Ui to Marzban using the Marzban API. It securely logs into both panels, retrieves user data from X-Ui, and adds it to Marzban.
+This script is designed to simplify the transfer of user data from Hiddify to Marzban using the Marzban API. It securely logs into both panels, retrieves user data from Hiddify, and adds it to Marzban.
 
 ### Prerequisites
 Python 3.0+ with the requests library is required. The script is not compatible with Python 2.0.
@@ -38,7 +38,7 @@ Python 3.0+ with the requests library is required. The script is not compatible 
 git clone https://github.com/ItsAML/Hiddify-to-Marzban.git
 
 # Change Directory
-cd X-Ui-to-Marzban
+cd Hiddify-to-Marzban
 
 # Install pip (if not already installed)
 wget -qO- https://bootstrap.pypa.io/get-pip.py | python3 -
@@ -55,7 +55,7 @@ python3 main.py
 git clone https://github.com/ItsAML/Hiddify-to-Marzban.git
 
 # Navigate to the Repository Directory
-cd X-Ui-to-Marzban
+cd Hiddify-to-Marzban
 
 # Install Python (if not already installed)
 # Download and install Python from https://www.python.org/downloads/
