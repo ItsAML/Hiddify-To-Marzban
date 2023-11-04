@@ -66,11 +66,10 @@ git clone https://github.com/ItsAML/Hiddify-to-Marzban.git
 # Navigate to the Repository Directory
 cd Hiddify-to-Marzban
 ```
-
+```bash
 # Install Python (if not already installed)
 # Download and install Python from https://www.python.org/downloads/
 # Ensure you add Python to your system's PATH during installation
-```bash
 # Install Dependencies
 pip install -r requirements.txt
 ```
