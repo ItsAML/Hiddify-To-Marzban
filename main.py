@@ -40,7 +40,6 @@ def validate_username(username):
     return username
 
 
-
 # Detecting Persian/Arabic Words
 def contains_non_english(text):
     persian_arabic_chars = "ابپتثجچحخدذرزژسشصضطظعغفقکگلمنهویئ"
@@ -264,17 +263,20 @@ def add_m_user(session, access_token, uuid, email, traffic, expiretime, inbounds
         # Printing Json Data
         # print(json.dumps(data, indent=4))
         response = session.post(url,json=data, headers=headers)
-        if response.status_code == 409:
-            for i in range(3):
-                print(f"Sending Request Failed, Attempt Number {i}...")
-                response = session.post(url,json=data, headers=headers)
-                if response.status_code == 200:
-                    break
-                
+        response.raise_for_status()
         user_status = response.json()
         return user_status
     except requests.exceptions.RequestException as e:
         logging.error(f'Error occurred while adding user: {e}')
+        if response.status_code == 409:
+            for i in range(3):
+                print(f"Sending Request Failed,Username Already Exists, Changing Username and Trying Again. Attempt Number {i+1}...")
+                data["username"] = f"{email}{i+1}"
+                response = session.post(url,json=data, headers=headers)
+                if response.status_code == 200:
+                    print(f"Username Has Been Changed to {data['username']}")
+                    return response.json()
+                    break
         return None
 
 def add_m_custom_user(session, access_token, uuid, email, traffic, expiretime, inbounds, flow):
@@ -332,16 +334,20 @@ def add_m_custom_user(session, access_token, uuid, email, traffic, expiretime, i
     try:
         #print(json.dumps(data, indent=4))
         response = session.post(url, json=data, headers=headers)
-        if response.status_code == 409:
-            for i in range(3):
-                print(f"Sending Request Failed, Attempt Number {i}...")
-                response = session.post(url,json=data, headers=headers)
-                if response.status_code == 200:
-                    break
+        response.raise_for_status()
         user_status = response.json()
         return user_status
     except requests.exceptions.RequestException as e:
         logging.error(f'Error occurred while adding user: {e}')
+        if response.status_code == 409:
+            for i in range(3):
+                print(f"Sending Request Failed,Username Already Exists, Changing Username and Trying Again. Attempt Number {i+1}...")
+                data["username"] = f"{email}{i+1}"
+                response = session.post(url,json=data, headers=headers)
+                if response.status_code == 200:
+                    print(f"Username Has Been Changed to {data['username']}")
+                    return response.json()
+                    break
         return None
 
 def add_m_users(session, access_token, users, inbound_names):
