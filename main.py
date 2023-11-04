@@ -275,6 +275,8 @@ def add_m_user(session, access_token, uuid, email, traffic, expiretime, inbounds
                 response = session.post(url,json=data, headers=headers)
                 if response.status_code == 200:
                     print(f"Username Has Been Changed to {data['username']}")
+                    with open("username_changelog.txt", "a+") as f:
+                        f.write(f"{email} ==> {data['username']}\n")
                     return response.json()
                     break
         return None
@@ -346,6 +348,8 @@ def add_m_custom_user(session, access_token, uuid, email, traffic, expiretime, i
                 response = session.post(url,json=data, headers=headers)
                 if response.status_code == 200:
                     print(f"Username Has Been Changed to {data['username']}")
+                    with open("username_changelog.txt", "a+") as f:
+                        f.write(f"{email} ==> {data['username']}\n")
                     return response.json()
                     break
         return None
