@@ -54,6 +54,7 @@ python3 -m pip install -r requirements.txt
 ```
 
 ```bash
+# Make Sure You Set Your Variables Inside Config.py 
 # Run the Script
 python3 main.py
 ```
@@ -75,6 +76,7 @@ pip install -r requirements.txt
 ```
 
 ```bash
+# Make Sure You Set Your Variables Inside Config.py 
 # Run the Script
 python main.py
 ```
