@@ -385,7 +385,10 @@ if __name__ == "__main__":
             choice = input("Do you wanna proceed to transfer users To Marzban? (y/n): ").strip().lower()
             
             if choice == 'y':
-                auto_manual = input("Do you want to Transfer Users by Automatic Method or Manual Method? (a/m)").strip().lower()
+                print("Do you want to Transfer Users by Automatic Method or Manual Method")
+                print("Automatic ==> Grabs Marzban Inbounds and Use All of Them To Create Users + Enable Flow For Vless Protocol")
+                print("Manual ==> Pick The Inbounds You Want To Use Them in Order To Create Users + Disable/Enable Flow For Vless Protocol\n")
+                auto_manual = input("Enter (a/m) to Continue: ").strip().lower()                
                 if auto_manual == "a":
                     # Getting Marzban Inbounds for Later Use
                     token = m_login(M_SESSION, M_USERNAME, M_PASSWORD)
