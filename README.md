@@ -36,16 +36,24 @@ Python 3.0+ with the requests library is required. The script is not compatible 
 ```bash
 # Clone the Repository
 git clone https://github.com/ItsAML/Hiddify-to-Marzban.git
+```
 
+```bash
 # Change Directory
 cd Hiddify-to-Marzban
+```
 
+```bash
 # Install pip (if not already installed)
 wget -qO- https://bootstrap.pypa.io/get-pip.py | python3 -
+```
 
+```bash
 # Install Dependencies
 python3 -m pip install -r requirements.txt
+```
 
+```bash
 # Run the Script
 python3 main.py
 ```
@@ -53,17 +61,21 @@ python3 main.py
 ```bash
 # Clone the Repository
 git clone https://github.com/ItsAML/Hiddify-to-Marzban.git
-
+```
+```bash
 # Navigate to the Repository Directory
 cd Hiddify-to-Marzban
+```
 
 # Install Python (if not already installed)
 # Download and install Python from https://www.python.org/downloads/
 # Ensure you add Python to your system's PATH during installation
-
+```bash
 # Install Dependencies
 pip install -r requirements.txt
+```
 
+```bash
 # Run the Script
 python main.py
 ```
